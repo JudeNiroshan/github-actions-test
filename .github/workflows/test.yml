@@ -1,0 +1,33 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Challenge
+
+# Controls when the workflow will run
+on: push
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Show date
+        run: echo date
+  job2:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Show date
+        run: Get-Date
+  job3:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Show date
+        run: echo date
+  job4:
+    needs: [job1, job2, job3]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Final task
+        run: echo "We are done!"
+
