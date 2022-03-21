@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Show date
-        run: echo date
+        run: date
   job2:
     runs-on: windows-latest
     steps:
@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Show date
-        run: echo date
+        run: date
   job4:
     needs: [job1, job2, job3]
     runs-on: ubuntu-latest
